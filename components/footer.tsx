@@ -1,5 +1,7 @@
 import { Shield, Youtube, Instagram, Twitter, Brain } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import WhopIcon from "@/public/whop.svg"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -7,7 +9,11 @@ export function Footer() {
   const socialLinks = [
     { icon: Youtube, href: "https://www.youtube.com/@evolviastudio", label: "YouTube" },
     { icon: Instagram, href: "https://www.instagram.com/evolv_ia?igsh=bXIxMjU2ZmR5NGEw", label: "Instagram" },
-    { icon: Twitter, href: "https://whop.com/@evolvia/", label: "whop" },
+    {
+      icon: () => <Image src={WhopIcon} alt="Whop" width={20} height={20} className="group-hover:scale-110 transition-transform" />,
+      href: "https://whop.com/@evolvia/",
+      label: "whop"
+    },
   ]
 
   return (
@@ -78,7 +84,11 @@ export function Footer() {
                   className="text-white/60 hover:text-white transition-colors group"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  {social.label === "whop" ?
+                    <img src={'/whop.svg'} className="w-5 h-5  group-hover:scale-110 transition-transform" />
+                    :
+                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  }
                 </a>
               ))}
             </div>
