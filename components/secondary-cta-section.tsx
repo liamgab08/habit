@@ -1,5 +1,6 @@
 import { EmailSignup } from "@/components/email-signup"
 import { Star, Users, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function SecondaryCtaSection() {
   return (
@@ -76,8 +77,10 @@ export function SecondaryCtaSection() {
         </div>
 
         <div className="flex items-center justify-center gap-2 text-electric-indigo hover:text-electric-indigo/80 transition-colors cursor-pointer group">
-          <span className="font-medium">Learn more about our early access program</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Link href="/learn-more" className="flex items-center gap-2">
+            <span className="font-medium">Learn more about our early access program</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>
