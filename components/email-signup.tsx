@@ -9,21 +9,42 @@ import { Mail, CheckCircle, Loader2, Sparkles } from "lucide-react"
 
 export function EmailSignup() {
   const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
+    setStatus("loading")
 
-    setIsLoading(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitted(true)
-    setIsLoading(false)
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email.trim() }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to join waitlist")
+      }
+
+      setStatus("success")
+      setMessage(data.message)
+      setEmail("")
+    } catch (error) {
+      setStatus("error")
+      setMessage(error instanceof Error ? error.message : "Failed to join waitlist")
+    }
   }
 
-  if (isSubmitted) {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value.trim())
+  }
+
+  if (status === "success") {
     return (
       <div className="flex items-center justify-center gap-3 p-8 bg-gradient-to-r from-electric-indigo/5 via-neon-sky/10 to-electric-indigo/5 rounded-2xl border border-neon-sky/30 transform hover:scale-[1.02] transition-all duration-300">
         <div className="flex items-center gap-3">
@@ -54,19 +75,20 @@ export function EmailSignup() {
             type="email"
             placeholder="Your Email Address"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             className="pl-10 h-12 text-lg border-2 border-electric-indigo/20 focus:border-electric-indigo focus:ring-2 focus:ring-neon-sky/20 rounded-xl bg-cloud-white"
             required
+            disabled={status === "loading"}
           />
         </div>
         <Button
           type="submit"
-          disabled={isLoading}
+          disabled={status === "loading"}
           className={`h-12 px-8 text-lg font-semibold bg-hot-coral hover:bg-hot-coral/90 text-white rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-hot-coral/20 flex items-center gap-2 ${
-            isLoading ? "opacity-90" : ""
+            status === "loading" ? "opacity-90" : ""
           }`}
         >
-          {isLoading ? (
+          {status === "loading" ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               <span>Joining...</span>
@@ -79,6 +101,16 @@ export function EmailSignup() {
           )}
         </Button>
       </form>
+      
+      {message && (
+        <p
+          className={`mt-2 text-sm ${
+            status === "success" ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {message}
+        </p>
+      )}
     </div>
   )
 }
