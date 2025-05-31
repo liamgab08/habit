@@ -1,12 +1,13 @@
 import { Shield, Youtube, Instagram, Twitter, Brain } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Youtube, href: "https://www.youtube.com/@evolviastudio", label: "YouTube" },
+    { icon: Instagram, href: "https://www.instagram.com/evolv_ia?igsh=bXIxMjU2ZmR5NGEw", label: "Instagram" },
+    { icon: Twitter, href: "https://whop.com/@evolvia/", label: "whop" },
   ]
 
   return (
@@ -21,14 +22,14 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12 pb-12 border-b border-white/10">
           {/* Brand Section */}
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-              <div className="w-8 h-8 bg-gradient-to-br from-electric-indigo to-hot-coral rounded-lg flex items-center justify-center">
+            <Link href="/" className="flex items-center gap-2 mb-4 justify-center md:justify-start group">
+              <div className="w-8 h-8 bg-gradient-to-br from-electric-indigo to-hot-coral rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-electric-indigo to-hot-coral bg-clip-text text-transparent">
                 Habit Flow
               </span>
-            </div>
+            </Link>
             <p className="text-white/60 text-sm">
               Transforming daily habits into effortless routines with the power of AI.
             </p>
@@ -38,9 +39,9 @@ export function Footer() {
           <div className="text-center md:text-left">
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              <a href="#features" className="text-white/60 hover:text-white transition-colors">Features</a>
-              <a href="#about" className="text-white/60 hover:text-white transition-colors">About Us</a>
-              <a href="#blog" className="text-white/60 hover:text-white transition-colors">Blog</a>
+              <Link href="/features" className="text-white/60 hover:text-white transition-colors">Features</Link>
+              <Link href="/about" className="text-white/60 hover:text-white transition-colors">About Us</Link>
+              <Link href="/blog" className="text-white/60 hover:text-white transition-colors">Blog</Link>
             </div>
           </div>
 
@@ -61,13 +62,13 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <a
+            <Link
               href="/privacy-policy"
               className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
             >
               <Shield className="w-4 h-4 group-hover:text-hot-coral transition-colors" />
               <span>Privacy Policy</span>
-            </a>
+            </Link>
 
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (

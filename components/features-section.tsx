@@ -46,18 +46,18 @@ export function FeaturesSection() {
             This Isn't Just Another{" "}
             <span className="relative inline-block">
               Habit Tracker
-              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-hot-coral to-neon-sky rounded-full"></div>
+              <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-hot-coral to-neon-sky rounded-full"></span>
             </span>
             .
           </h3>
-          <p className="text-xl text-electric-indigo font-semibold">
+          <div className="text-xl text-electric-indigo font-semibold">
             It's Your{" "}
             <span className="relative inline-block">
               Intelligent Co-Pilot
-              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-electric-indigo to-neon-sky rounded-full opacity-50"></div>
+              <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-electric-indigo to-neon-sky rounded-full opacity-50"></span>
             </span>
             .
-          </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
