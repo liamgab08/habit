@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
           <section className="mb-12 animate-fade-in [--animation-delay:200ms]">
             <h2 className="text-2xl font-bold text-midnight-charcoal mb-4">Introduction</h2>
             <p className="text-midnight-charcoal/70 leading-relaxed">
-              At Habit Flow, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.
+              At Aura Habits, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.
             </p>
           </section>
 
@@ -84,8 +84,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold text-midnight-charcoal mb-4">Contact Us</h2>
             <p className="text-midnight-charcoal/70 leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:privacy@habitflow.app" className="text-electric-indigo hover:text-electric-indigo/80 transition-colors">
-                privacy@habitflow.app
+              <a href="mailto:privacy@aurahabits.app" className="text-electric-indigo hover:text-electric-indigo/80 transition-colors">
+                privacy@aurahabits.app
               </a>
             </p>
           </section>

@@ -27,7 +27,7 @@ export default function AboutPage() {
     {
       year: "2023",
       title: "The Beginning",
-      description: "Habit Flow was born from a simple idea: make habit building as natural as breathing.",
+      description: "Aura Habits was born from a simple idea: make habit building as natural as breathing.",
     },
     {
       year: "2024",
@@ -70,7 +70,7 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-xl text-midnight-charcoal/70">
-              Meet the team behind Habit Flow and discover our mission to make personal growth effortless.
+              Meet the team behind Aura Habits and discover our mission to make personal growth effortless.
             </p>
           </div>
         </div>

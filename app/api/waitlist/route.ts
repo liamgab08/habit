@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const { email } = result.data
 
     const client = await clientPromise
-    const db = client.db('habitflow')
+    const db = client.db('aurahabits')
     const waitlistCollection = db.collection('waitlist')
 
     // Check if email already exists

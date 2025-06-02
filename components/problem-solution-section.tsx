@@ -63,7 +63,7 @@ export function ProblemSolutionSection() {
               <div className="h-px w-12 bg-gradient-to-l from-electric-indigo to-transparent"></div>
             </div>
             <p className="text-lg md:text-xl text-midnight-charcoal leading-relaxed">
-              Imagine a <span className="font-semibold text-electric-indigo">smarter way</span>. The Habit Flow App learns
+              Imagine a <span className="font-semibold text-electric-indigo">smarter way</span>. The Aura Habits App learns
               your <span className="font-semibold text-electric-indigo">unique brain</span>, helps identify your triggers,
               and guides you to consistent action, making lasting change truly{" "}
               <span className="font-semibold text-electric-indigo">effortless</span>.

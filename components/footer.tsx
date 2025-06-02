@@ -33,7 +33,7 @@ export function Footer() {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-electric-indigo to-hot-coral bg-clip-text text-transparent">
-                Habit Flow
+                Aura Habits
               </span>
             </Link>
             <p className="text-white/60 text-sm">
@@ -54,8 +54,8 @@ export function Footer() {
           {/* Contact */}
           <div className="text-center md:text-left">
             <h4 className="text-white font-semibold mb-4">Get in Touch</h4>
-            <a href="mailto:hello@habitflow.app" className="text-white/60 hover:text-white transition-colors">
-              hello@habitflow.app
+            <a href="mailto:hello@aurahabits.app" className="text-white/60 hover:text-white transition-colors">
+              hello@aurahabits.app
             </a>
           </div>
         </div>
@@ -63,7 +63,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <p className="text-white/60 text-sm">
-              © {currentYear} Habit Flow App. All rights reserved.
+              © {currentYear} Aura Habits App. All rights reserved.
             </p>
           </div>
 

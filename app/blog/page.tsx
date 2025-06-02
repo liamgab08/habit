@@ -13,7 +13,7 @@ export default function BlogPage() {
     },
     {
       title: "5 Common Habit Building Mistakes to Avoid",
-      excerpt: "Learn about the most common pitfalls in habit building and how Habit Flow's AI helps you navigate around them.",
+      excerpt: "Learn about the most common pitfalls in habit building and how Aura Habits' AI helps you navigate around them.",
       category: "Tips",
       date: "Mar 12, 2024",
       readTime: "4 min read",
